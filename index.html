@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SentBiz 결제·POS·환불 이용 가이드</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiByeD0iNSIgZmlsbD0iIzA3NDZDQSIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xNy41NjA1IDEwLjUxOThDMTcuODAzMiAxMC41MTk4IDE3Ljk5OTggMTAuNzE2NyAxOCAxMC45NTkyVjEzLjQxNzJDMTggMTYuNDY1MiAxNS41Mjk0IDE4LjkzNTcgMTIuNDgxNCAxOC45MzU4SDYuNDM5NDVDNi4xOTY3NCAxOC45MzU3IDYgMTguNzM5MSA2IDE4LjQ5NjNWMTUuNjU4NEM2IDE1LjQxNTcgNi4xOTY3NCAxNS4yMTgxIDYuNDM5NDUgMTUuMjE4SDExLjYzNzdDMTEuOTczNCAxNS4yMTgxIDEyLjMwNjEgMTUuMTUyMSAxMi42MTYyIDE1LjAyMzdDMTIuOTI2MyAxNC44OTUzIDEzLjIwOCAxNC43MDcyIDEzLjQ0NTMgMTQuNDdDMTMuNjgyNyAxNC4yMzI2IDEzLjg3MTUgMTMuOTUxIDE0IDEzLjY0MDlDMTQuMTI4NCAxMy4zMzA4IDE0LjE5NDMgMTIuOTk4IDE0LjE5NDMgMTIuNjYyNFYxMC45NTkyQzE0LjE5NDYgMTAuNzE2NyAxNC4zOTEyIDEwLjUxOTggMTQuNjMzOCAxMC41MTk4SDE3LjU2MDVaTTE3LjU2MDUgNC42NjQzMUMxNy44MDMyIDQuNjY0MzEgMTcuOTk5OCA0Ljg2MTE3IDE4IDUuMTAzNzZWNy45NDI2M0MxOCA4LjE4NTM4IDE3LjgwMzMgOC4zODIwOCAxNy41NjA1IDguMzgyMDhIMTIuNjA4NEMxMi4yNzI3IDguMzgyMDIgMTEuNjkzOCA4LjQ0ODA3IDExLjM4MzggOC41NzY0MkMxMS4wNzM4IDguNzA0NzkgMTAuNzkyIDguODkyOTIgMTAuNTU0NyA5LjEzMDEzQzEwLjMxNzQgOS4zNjczMyAxMC4xMjk1IDkuNjQ5MyAxMC4wMDEgOS45NTkyM0M5Ljg3MjUxIDEwLjI2OTMgOS44MDU2OCAxMC42MDIxIDkuODA1NjYgMTAuOTM3N1YxMi42NDA5QzkuODA1NjYgMTIuODgzNiA5LjYwODk3IDEzLjA4MDMgOS4zNjYyMSAxMy4wODAzSDYuNDM5NDVDNi4xOTY3NCAxMy4wODAzIDYgMTIuODgzNiA2IDEyLjY0MDlWMTAuMTgzOEM2IDcuMTM1NzkgOC43MTc1OCA0LjY2NDMxIDExLjc2NTYgNC42NjQzMUgxNy41NjA1WiIvPjwvc3ZnPg==">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<style>
+:root{
+  --bg:#FFFFFF; --soft:#F4F6F8; --fg:#191F28; --body:#333D4B; --muted:#6B7684; --line:#E5E8EB;
+  --brand:#0746CA; --brand-soft:#EBF1FD; --brand-ink:#0746CA;
+  --info-bg:#F0F5FF; --info-fg:#1B3E8F; --info-ic:#3B6FE0;
+  --warn-bg:#FFF8E6; --warn-fg:#7A5200; --warn-ic:#E8A200;
+  --dang-bg:#FFF1F1; --dang-fg:#B42318; --dang-ic:#E5484D;
+  --shot-bg:#F2F4F6;
+  --font:"Inter","Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+@media not all{:root{
+  --bg:#15181D; --soft:#1D2128; --fg:#ECEFF3; --body:#C9D0D9; --muted:#8D97A5; --line:#2B313A;
+  --brand:#7FA6FF; --brand-soft:#1F2B45; --brand-ink:#9DBBFF;
+  --info-bg:#1A2438; --info-fg:#B9CCF5; --info-ic:#7FA6FF;
+  --warn-bg:#2C2414; --warn-fg:#F2D08A; --warn-ic:#F2C14B;
+  --dang-bg:#341C1C; --dang-fg:#FFB4AB; --dang-ic:#FF7A70;
+  --shot-bg:#1D2128; color-scheme:dark }}
+*{box-sizing:border-box}
+html{scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px;border-radius:6px}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:30;height:64px;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;padding:0 24px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:17px;white-space:nowrap}
+.logo i{width:28px;height:28px;border-radius:8px;background:var(--brand);color:#fff;display:grid;place-items:center;font-style:normal;font-size:15px}
+.logo span{color:var(--muted);font-weight:500;font-size:14px}
+.search{position:relative;flex:1;max-width:420px;margin-left:auto}
+.search input{width:100%;height:40px;border-radius:10px;border:1px solid transparent;background:var(--soft);padding:0 14px 0 38px;font:inherit;font-size:14px;color:var(--fg)}
+.search input:focus{outline:none;border-color:var(--brand);background:var(--bg)}
+.search svg{position:absolute;left:12px;top:11px;color:var(--muted)}
+.results{position:absolute;top:46px;left:0;right:0;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.12);padding:6px;max-height:60vh;overflow:auto}
+.results[hidden]{display:none}
+.results a{display:block;padding:9px 12px;border-radius:8px;text-decoration:none}
+.results a:hover,.results a.on{background:var(--soft)}
+.results b{display:block;font-size:14px}
+.results small{display:block;color:var(--muted);font-size:12px;line-height:1.5}
+.results .none{padding:12px;color:var(--muted);font-size:14px}
+.motion{display:flex;align-items:center;gap:8px;background:none;border:0;cursor:pointer;font-size:13px;color:var(--muted);white-space:nowrap;padding:6px 4px}
+.motion .sw{width:34px;height:20px;border-radius:999px;background:var(--line);position:relative;transition:background .15s}
+.motion .sw::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:left .15s}
+.motion[aria-pressed="true"] .sw{background:var(--brand)}
+.motion[aria-pressed="true"] .sw::after{left:16px}
+
+/* layout */
+.wrap{display:grid;grid-template-columns:272px minmax(0,1fr)}
+nav.toc{position:sticky;top:64px;height:calc(100vh - 64px);overflow:auto;border-right:1px solid var(--line);padding:24px 16px 40px;display:flex;flex-direction:column;gap:22px}
+nav.toc .grp-t{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--fg);padding:0 12px 6px}
+nav.toc a{display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:8px;color:var(--muted);text-decoration:none;font-size:14.5px;line-height:1.45}
+nav.toc a:hover{background:var(--soft);color:var(--fg)}
+nav.toc a[aria-current="page"]{background:var(--brand-soft);color:var(--brand-ink);font-weight:700}
+nav.toc .home{font-weight:700;color:var(--fg)}
+main{min-width:0;padding:40px 48px 80px}
+.page{max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+.mobile-nav{display:none}
+
+/* typography */
+.crumb{font-size:14px;color:var(--brand-ink);font-weight:700}
+.page h1{font-size:32px;line-height:1.35;margin:-14px 0 0;letter-spacing:-.02em;text-wrap:balance}
+.lead{margin:-8px 0 0;font-size:17px;color:var(--body);max-width:68ch}
+h3{font-size:20px;margin:10px 0 0;letter-spacing:-.01em}
+.flag{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;background:var(--dang-bg);color:var(--dang-fg);font-size:11px;font-weight:700;vertical-align:2px;white-space:nowrap;line-height:1.6}
+.flag.new{background:var(--brand);color:#fff}
+h1 .flag{font-size:12px;vertical-align:8px}
+
+/* callouts */
+.callout{display:flex;gap:12px;align-items:flex-start;border-radius:12px;padding:16px 18px;font-size:15px;background:var(--info-bg);color:var(--info-fg)}
+.callout .ic{flex:none;width:20px;height:20px;border-radius:50%;background:var(--info-ic);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700;margin-top:2px;font-style:normal}
+.callout b{display:block;margin-bottom:2px}
+.callout.danger{background:var(--dang-bg);color:var(--dang-fg)}
+.callout.danger .ic{background:var(--dang-ic)}
+
+/* screenshots */
+.shot{background:var(--shot-bg);border-radius:16px;padding:20px;overflow-x:auto}
+.shot-inner{position:relative;margin:0 auto;min-width:520px}
+.shot-inner.mid{max-width:900px}
+.shot-inner img{display:block;width:100%;height:auto;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.mk{position:absolute;transform:translate(-50%,-50%);width:22px;height:22px;border-radius:50%;background:#0746CA;color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;font-variant-numeric:tabular-nums;box-shadow:0 0 0 2px #fff,0 1px 4px rgba(0,0,0,.35);pointer-events:none;transition:transform .15s}
+.mk.hot{transform:translate(-50%,-50%) scale(1.45);background:#E5484D}
+.zoomable{cursor:zoom-in}
+.zoom-hint{font-size:12.5px;color:var(--muted);text-align:center;margin-top:10px}
+.dialogs{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.dialogs figure{margin:0;display:flex;flex-direction:column;gap:8px;flex:1 1 260px;max-width:420px}
+.dialogs img{width:100%;border-radius:10px;border:1px solid var(--line)}
+.dialogs.many figure{flex:1 1 200px;max-width:260px}
+.dialogs figcaption{font-size:13.5px;color:var(--muted)}
+
+/* items */
+.items{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.items > li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:2px 12px;padding:12px 14px;border-radius:12px;transition:background .12s}
+.items > li:hover{background:var(--soft)}
+.items .num{grid-row:span 2;width:24px;height:24px;border-radius:50%;background:var(--brand);color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center;margin-top:2px;transition:background .12s}
+.items > li:hover .num{background:#E5484D}
+.items .name{font-weight:700;font-size:16px}
+.items .desc{color:var(--body);font-size:15px}
+.items .desc p{margin:0}
+.items .desc ul{margin:6px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:3px}
+.split{display:grid;gap:36px;align-items:stretch}
+.split.wide{grid-template-columns:minmax(300px,2fr) minmax(0,3fr)}
+.split.narrow{grid-template-columns:minmax(0,1fr) minmax(0,500px)}
+.split-media{display:flex;flex-direction:column;gap:16px;min-width:0}
+.split-media.stick .shot{position:sticky;top:88px}
+.split .shot .shot-inner{min-width:0}
+.split-media .dialogs{flex-direction:column;flex-wrap:nowrap;gap:16px}
+.split-media .dialogs figure,.split-media .dialogs.many figure{flex:none;width:100%;max-width:none;gap:0}
+.dialogs figure.shot img{border:0;border-radius:8px}
+.dialogs figure.shot figcaption{padding:0 18px 16px;font-size:14px;color:var(--body)}
+.split .shot.side .shot-inner{min-width:0}
+.split-text{display:flex;flex-direction:column;gap:12px;min-width:0}
+
+/* table */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{border-bottom:1px solid var(--line);padding:11px 14px;text-align:left;vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{background:var(--soft);color:var(--muted);font-weight:500;font-size:13px}
+td:first-child{font-weight:700;white-space:nowrap}
+
+/* related + pager */
+.related{border-top:1px solid var(--line);padding-top:24px}
+.related h4{margin:0 0 8px;font-size:15px}
+.related ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.related a{color:var(--brand-ink);text-decoration:none;font-size:15px}
+.related a:hover{text-decoration:underline}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pager a{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);border-radius:12px;padding:14px 18px;text-decoration:none;transition:border-color .12s}
+.pager a:hover{border-color:var(--brand)}
+.pager a small{color:var(--muted);font-size:13px}
+.pager a b{font-size:16px;color:var(--fg)}
+.pager a.next{text-align:right;grid-column:2}
+
+/* home */
+.hero{background:linear-gradient(135deg,#0746CA 0%,#2F6BE8 100%);color:#fff;border-radius:20px;padding:40px 40px 36px;display:flex;flex-direction:column;gap:10px}
+.hero small{font-size:14px;opacity:.85;font-weight:500}
+.hero h1{color:#fff;margin:0;font-size:34px}
+.hero p{margin:0;font-size:17px;opacity:.92;max-width:60ch}
+.quick{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.quick li{border-bottom:1px solid var(--line)}
+.quick a{display:flex;gap:16px;align-items:baseline;padding:14px 4px;text-decoration:none;flex-wrap:wrap}
+.quick a b{color:var(--brand-ink);font-size:16px;min-width:180px}
+.quick a span{color:var(--muted);font-size:15px}
+.quick a:hover b{text-decoration:underline}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.card .t{font-size:17px;font-weight:700;display:flex;align-items:center}
+.card p{margin:0;font-size:14.5px;color:var(--muted)}
+.card ol{margin:4px 0 0;padding-left:20px;font-size:14.5px;display:flex;flex-direction:column;gap:2px}
+.card ol a{text-decoration:none;color:var(--body)}
+.card ol a:hover{color:var(--brand-ink);text-decoration:underline}
+footer.foot{max-width:1280px;margin:48px auto 0;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(10,14,20,.86);z-index:50;overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:40px 16px;cursor:zoom-out}
+.lb[hidden]{display:none}
+.lb img{max-width:none;width:auto;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.lb-close{position:fixed;top:12px;right:16px;color:#fff;font-size:13px;background:rgba(0,0,0,.45);padding:6px 10px;border-radius:6px}
+
+@media (max-width:1100px){.split.wide,.split.narrow{grid-template-columns:minmax(0,1fr)}.split-media{order:-1}.split-media.stick .shot{position:static}main{padding:32px 28px 64px}}
+@media (max-width:860px){
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  nav.toc{display:none}
+  .mobile-nav{display:block;margin-bottom:20px}
+  .mobile-nav select{width:100%;font:inherit;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+  main{padding:20px 16px 56px}
+  .bar{padding:0 14px;gap:10px}
+  .logo span,.motion .lbl{display:none}
+  .page h1{font-size:26px}
+  .hero{padding:28px 22px}
+  .hero h1{font-size:26px}
+  .shot{padding:10px}
+  .pager{grid-template-columns:1fr}.pager a.next{grid-column:1}
+}
+
+/* ===== V3 fancy layer ===== */
+:root{--navy:#122666;--electric:#0B3BF0;--violet:#7B6BFF;--sky:#8FD3FF;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  --grad:linear-gradient(100deg,#17254F 0%,#24386F 38%,#3E5596 66%,#7F93C9 100%)}
+.logo{color:var(--navy);gap:10px}
+.logo .wm{height:20px;width:auto;display:block}
+@media not all{.logo{color:#fff}}
+.logo em{font-style:normal;font-weight:700;font-size:13px;color:var(--brand-ink);background:var(--brand-soft);padding:2px 8px;border-radius:999px;letter-spacing:.02em}
+.logo span{border-left:1px solid var(--line);padding-left:10px}
+nav.toc{background:linear-gradient(180deg,var(--bg),var(--soft))}
+nav.toc .grp-t svg,.card .t svg{flex:none;color:var(--brand)}
+.card .t{gap:10px}
+.card .t .gi{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--brand-soft)}
+nav.toc a[aria-current="page"]{background:linear-gradient(90deg,var(--brand-soft),transparent);box-shadow:inset 3px 0 0 var(--brand);border-radius:0 8px 8px 0}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--grad);border-radius:24px;padding:56px 48px 48px;min-height:300px;justify-content:flex-end;box-shadow:0 24px 60px -24px rgba(11,40,200,.55)}
+.hero::before{content:"";position:absolute;inset:0;background-image:var(--grain);mix-blend-mode:overlay;opacity:.7;pointer-events:none}
+.hero::after{content:"";position:absolute;right:-120px;bottom:-220px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.18),rgba(255,255,255,0) 60%);pointer-events:none}
+.hero > *{position:relative;z-index:1}
+.hero .wm-w{align-self:flex-start;height:30px;width:auto;margin-bottom:18px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.2))}
+.hero h1{font-size:40px;font-weight:800;letter-spacing:-.03em}
+.hero small{display:inline-flex;align-self:flex-start;gap:6px;align-items:center;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.28);padding:4px 12px;border-radius:999px;opacity:1}
+.hero .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hero .chips a{color:#fff;text-decoration:none;font-size:14px;font-weight:500;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px);padding:8px 14px;border-radius:12px;transition:background .15s,transform .15s}
+.hero .chips a:hover{background:rgba(255,255,255,.26);transform:translateY(-1px)}
+
+/* page header band */
+.phead{position:relative;overflow:hidden;background:var(--grad);border-radius:20px;padding:32px 36px 30px;color:#fff;display:flex;flex-direction:column;gap:10px;box-shadow:0 18px 40px -22px rgba(11,40,200,.6)}
+.phead::before{content:"";position:absolute;inset:0;background-image:var(--grain);mix-blend-mode:overlay;opacity:.6;pointer-events:none}
+.phead > *{position:relative}
+.phead .crumb{color:rgba(255,255,255,.85);display:flex;align-items:center;gap:8px}
+.phead .crumb svg{color:#fff}
+.phead h1{color:#fff;margin:0;font-size:34px;font-weight:800}
+.phead .lead{color:rgba(255,255,255,.92);margin:0}
+.phead .flag.new{background:#fff;color:var(--electric)}
+.phead .step{position:absolute;right:28px;top:14px;font-size:96px;font-weight:800;line-height:1;color:rgba(255,255,255,.12);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+
+/* browser-window frame for screenshots */
+.shot{background:linear-gradient(160deg,#EEF2FF,#F6F7FB 60%);border:1px solid var(--line);padding:0;border-radius:18px;box-shadow:0 20px 50px -30px rgba(18,38,102,.45)}
+@media not all{.shot{background:linear-gradient(160deg,#1B2340,#1A1E26 60%)}}
+.shot .chrome{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 70%,transparent);border-radius:18px 18px 0 0}
+.shot .chrome i{width:10px;height:10px;border-radius:50%;background:#FF5F57}
+.shot .chrome i:nth-child(2){background:#FEBC2E}.shot .chrome i:nth-child(3){background:#28C840}
+.shot .chrome span{margin-left:10px;flex:1;max-width:360px;font-size:12px;color:var(--muted);background:var(--soft);border-radius:6px;padding:3px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shot-inner{margin:18px auto}
+.shot > .shot-inner{width:calc(100% - 36px)}
+.zoom-hint{margin:0 0 14px}
+
+/* items */
+.items .num{background:linear-gradient(135deg,#3B6BFF,#0B3BF0 60%,#122666);box-shadow:0 4px 10px -4px rgba(11,59,240,.7)}
+.items > li{border:1px solid transparent}
+.items > li:hover{background:var(--bg);border-color:var(--line);box-shadow:0 8px 24px -16px rgba(18,38,102,.35)}
+.callout{border:1px solid color-mix(in srgb,currentColor 18%,transparent)}
+.callout.danger{background:linear-gradient(90deg,var(--dang-bg),color-mix(in srgb,var(--dang-bg) 60%,var(--bg)))}
+
+/* home cards */
+.card{transition:transform .15s,box-shadow .15s,border-color .15s;background:var(--bg)}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px -22px rgba(18,38,102,.5);border-color:color-mix(in srgb,var(--brand) 35%,var(--line))}
+.quick a{border-radius:12px;padding:14px 12px;transition:background .12s}
+.quick a:hover{background:var(--soft)}
+.quick a b::after{content:" →";opacity:0;transition:opacity .12s}
+.quick a:hover b::after{opacity:1}
+.pager a{background:var(--bg);transition:transform .15s,box-shadow .15s,border-color .15s}
+.pager a:hover{transform:translateY(-2px);box-shadow:0 12px 28px -18px rgba(18,38,102,.5)}
+.pager a.next b::after{content:" →"}
+.pager a:not(.next) b::before{content:"← "}
+footer.foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+footer.foot .wm{height:14px;width:auto;color:var(--muted)}
+@media (max-width:860px){.phead{padding:24px 20px}.phead h1{font-size:26px}.phead .step{font-size:64px}.hero{padding:36px 22px 28px}.hero h1{font-size:28px}.logo span{display:none}.logo .wm{height:16px}}
+
+/* LNB collapse */
+.navbtn{position:fixed;z-index:35;top:84px;left:258px;width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:var(--bg);display:grid;place-items:center;cursor:pointer;color:var(--muted);box-shadow:0 2px 8px rgba(18,38,102,.12);transition:left .2s ease,background .12s,color .12s,border-color .12s}
+.navbtn:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+.navbtn svg{transition:transform .2s ease}
+.wrap.collapsed .navbtn{left:58px}
+.wrap.collapsed .navbtn svg{transform:rotate(180deg)}
+.wrap{transition:grid-template-columns .2s ease}
+.wrap.collapsed{grid-template-columns:72px minmax(0,1fr)}
+.wrap.collapsed nav.toc{padding:20px 10px;align-items:center;gap:10px;overflow-x:hidden}
+.wrap.collapsed nav.toc > div{display:flex;flex-direction:column;align-items:center}
+.wrap.collapsed nav.toc a:not(.gicon),.wrap.collapsed nav.toc .grp-t{display:none}
+nav.toc .gicon{display:none}
+.wrap.collapsed nav.toc .gicon{display:grid;place-items:center;width:44px;height:44px;padding:0;border-radius:12px;color:var(--muted);position:relative}
+.wrap.collapsed nav.toc .gicon:hover{background:var(--soft);color:var(--brand)}
+.wrap.collapsed nav.toc .gicon.on{background:var(--brand-soft);color:var(--brand);box-shadow:none}
+.wrap.collapsed nav.toc .gicon .tip{position:fixed;left:78px;transform:translateY(-50%);margin-top:22px;background:var(--fg);color:var(--bg);font-size:12.5px;font-weight:600;padding:5px 10px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .12s}
+.wrap.collapsed nav.toc .gicon:hover .tip{opacity:1}
+@media (max-width:860px){.navbtn{display:none}}
+
+/* softer palette (눈부심 완화) */
+.hero::before{opacity:.35}
+.hero{box-shadow:0 20px 50px -30px rgba(23,37,79,.55)}
+.phead{background:linear-gradient(100deg,#F3F5FA 0%,#ECF0F8 55%,#F1F0F8 100%);color:var(--fg);border:1px solid #E3E8F2;box-shadow:none}
+.phead::before{display:none}
+.phead .crumb{color:#4A5A86}
+.phead .crumb svg{color:#4A5A86}
+.phead h1{color:#17254F}
+.phead .lead{color:var(--body)}
+.phead .step{color:rgba(23,37,79,.07)}
+.phead .flag.new{background:#2E4FB8;color:#fff}
+.items .num{background:#2E4FB8;box-shadow:none}
+.flag.new{background:#2E4FB8}
+nav.toc a[aria-current="page"]{color:#24386F;box-shadow:inset 3px 0 0 #3E5596}
+.shot{background:linear-gradient(160deg,#F2F4F9,#F7F8FA 60%);box-shadow:0 16px 40px -30px rgba(23,37,79,.35)}
+.navbtn:hover{background:#24386F;border-color:#24386F}
+.motion[aria-pressed="true"] .sw{background:#3E5596}
+
+/* ===== crypto accent layer ===== */
+:root{--c-blue:#3D7BFF;--c-violet:#8B6CFF;--c-cyan:#38D6F5;--c-ink:#0A1030;
+  --c-grad:linear-gradient(90deg,#3D7BFF,#8B6CFF 55%,#38D6F5)}
+.hero{background:
+   radial-gradient(42% 70% at 82% 18%,rgba(139,108,255,.45),transparent 70%),
+   radial-gradient(38% 60% at 98% 92%,rgba(56,214,245,.28),transparent 70%),
+   radial-gradient(55% 80% at 55% 110%,rgba(61,123,255,.40),transparent 70%),
+   linear-gradient(180deg,#0B1236,#0A1030);
+  box-shadow:0 24px 60px -30px rgba(10,16,48,.7);border:1px solid rgba(255,255,255,.06)}
+.hero::before{background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:36px 36px;mix-blend-mode:normal;opacity:1;-webkit-mask-image:radial-gradient(80% 90% at 70% 40%,#000 30%,transparent 80%);mask-image:radial-gradient(80% 90% at 70% 40%,#000 30%,transparent 80%)}
+.hero::after{display:none}
+.hero h1 .gt{background:linear-gradient(90deg,#9DB8FF,#C3B2FF 50%,#8FE8FA);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .net{position:absolute;right:20px;top:50%;transform:translateY(-50%);width:380px;height:272px;z-index:0;opacity:.95;pointer-events:none}
+.hero .chips a{background:rgba(255,255,255,.06);border-color:rgba(157,184,255,.28)}
+.hero .chips a:hover{background:rgba(139,108,255,.22);border-color:rgba(195,178,255,.6)}
+.hero small{background:rgba(61,123,255,.14);border-color:rgba(157,184,255,.35)}
+.hero p{max-width:44ch}
+@media (max-width:1100px){.hero .net{opacity:.35;right:-80px}}
+
+.phead{background:
+   radial-gradient(40% 120% at 100% 0%,rgba(139,108,255,.16),transparent 70%),
+   radial-gradient(30% 100% at 85% 100%,rgba(56,214,245,.14),transparent 70%),
+   linear-gradient(100deg,#F5F7FC,#F0F3FB);border:1px solid #E4E8F3;position:relative}
+.phead::after{content:none}
+.phead::before{display:block;background-image:linear-gradient(rgba(23,37,79,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(23,37,79,.05) 1px,transparent 1px);background-size:28px 28px;mix-blend-mode:normal;opacity:1;-webkit-mask-image:linear-gradient(90deg,transparent 35%,#000 100%);mask-image:linear-gradient(90deg,transparent 35%,#000 100%)}
+.phead .step{background:linear-gradient(135deg,rgba(61,123,255,.22),rgba(139,108,255,.18));-webkit-background-clip:text;background-clip:text;color:transparent}
+.phead .crumb{color:#3D5BC9}.phead .crumb svg{color:#6C5CE7}
+.items .num{background:linear-gradient(135deg,#3D7BFF,#7B61FF);box-shadow:0 4px 12px -5px rgba(123,97,255,.75)}
+.flag.new,.phead .flag.new{background:linear-gradient(90deg,#3D7BFF,#7B61FF);color:#fff}
+.card .t .gi{background:linear-gradient(135deg,rgba(61,123,255,.12),rgba(139,108,255,.14))}
+.card .t svg,nav.toc .grp-t svg{color:#5B5BF0}
+.card:hover{border-color:rgba(123,97,255,.45);box-shadow:0 16px 36px -22px rgba(91,91,240,.55)}
+nav.toc a[aria-current="page"]{color:#2B3FA8;background:linear-gradient(90deg,rgba(61,123,255,.10),rgba(139,108,255,.05) 70%,transparent);box-shadow:inset 3px 0 0 #6C5CE7}
+.logo em{background:linear-gradient(90deg,rgba(61,123,255,.12),rgba(139,108,255,.14));color:#4B49D6}
+.motion[aria-pressed="true"] .sw{background:linear-gradient(90deg,#3D7BFF,#7B61FF)}
+.navbtn:hover{background:#4B49D6;border-color:#4B49D6}
+.shot{box-shadow:0 18px 44px -30px rgba(91,91,240,.45)}
+.quick a b{color:#3348C2}
+
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="logo" href="#start" aria-label="SentBiz 가이드 홈"><svg class="wm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 20" fill="currentColor" role="img" aria-label="SentBiz"><path d="M79.7657 5.07236V8.29315H87.2697V8.3431L79.7657 16.1981V19.4189H91.9999V16.1981H84.52V16.1481L91.9999 8.29315V5.07236H79.7657Z"/><path d="M77.6408 19.4173V4.76552H74.1236V19.4173H77.6408ZM74.4953 3.30774C74.8744 3.67959 75.3367 3.86458 75.8822 3.86458C76.4277 3.86458 76.89 3.67959 77.2691 3.30774C77.6482 2.9359 77.8386 2.47711 77.8386 1.93322C77.8386 1.38933 77.6445 0.950883 77.2561 0.56979C76.8678 0.190547 76.4092 0 75.8822 0C75.3552 0 74.8947 0.190547 74.5083 0.56979C74.1199 0.949033 73.9258 1.40413 73.9258 1.93322C73.9258 2.46231 74.1162 2.9359 74.4953 3.30774Z"/><path d="M69.7885 9.31024C70.7649 8.40376 71.4972 7.01813 71.4972 5.69355C71.4972 2.69476 68.7622 0.373047 65.8294 0.373047H57.7578V11.1695V19.4037H66.6745C69.5962 19.4037 72.4384 17.1412 72.394 13.8482C72.4199 11.9372 71.2364 10.2722 69.7885 9.31024ZM61.2916 3.46249H65.6038C66.8335 3.46249 67.9597 4.45592 67.943 5.7731C67.9578 7.09028 66.8335 8.08371 65.6038 8.08371H61.2916V3.46434V3.46249ZM66.3713 11.1695C67.5973 11.1695 68.9065 12.2258 68.8843 13.7705C68.9046 15.3152 67.5954 16.3272 66.3713 16.3272H61.2916V11.1713H66.3713V11.1695Z"/><path d="M11.1135 7.97656H14.6436V12.7032C14.6436 16.405 11.6442 19.4057 7.94404 19.4057H0V15.8741H7.91076C9.68042 15.8741 11.1135 14.4385 11.1135 12.6699V7.97841V7.97656Z"/><path d="M3.53007 11.8021H0V7.07548C0 3.37369 2.99936 0.373047 6.69955 0.373047H14.6454V3.90464H6.73468C4.96503 3.90464 3.53192 5.34021 3.53192 7.10878V11.8003L3.53007 11.8021Z"/><path d="M39.6616 4.9082C35.6858 4.9082 32.877 7.64801 32.877 11.3313V19.4045H36.4015V11.9159C36.4015 11.7512 36.4126 11.248 36.4348 11.0908C36.6511 9.50907 37.9307 8.33249 39.6616 8.33249C41.3924 8.33249 42.672 9.50907 42.8884 11.0908C42.9106 11.248 42.9217 11.7512 42.9217 11.9159V19.4045H46.4462V11.3313C46.4462 7.64986 43.6373 4.9082 39.6616 4.9082Z"/><path d="M55.6976 7.97641V4.90362H51.9733V0.373047H48.4414V15.5631C48.4414 17.685 50.1611 19.4055 52.2821 19.4055H55.6976V16.3272H53.51C52.6612 16.3272 51.9733 15.639 51.9733 14.7898V7.97641H55.6976Z"/><path d="M23.866 16.9217C22.0945 16.942 20.1455 15.8154 19.9329 13.6731H31.0723L31.0834 13.5751C31.3774 11.0036 30.7838 8.81883 29.0973 7.08171C27.7474 5.67758 25.8631 4.9043 23.7902 4.9043C19.6795 4.9043 16.4453 8.30639 16.4453 12.4892C16.4453 16.6719 19.7017 19.9982 23.842 19.9982C25.3324 19.9982 26.7396 19.5671 27.9083 18.755C29.0955 17.954 29.9535 16.7829 30.5859 15.3677H26.9671C26.2866 16.3852 25.2233 16.9198 23.8679 16.9198L23.866 16.9217ZM23.818 7.95859C23.8346 7.95859 23.8512 7.95859 23.8679 7.95859C26.1941 7.95859 27.483 9.66611 27.6698 10.9019H19.9883C20.1714 9.64021 21.4381 7.95859 23.818 7.95859Z"/></svg><em>Guide</em><span>2026년 11월 업데이트</span></a>
+  <div class="search" role="search">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" placeholder="궁금한 기능을 검색해 보세요" autocomplete="off" aria-label="가이드 검색">
+    <div class="results" id="res" hidden></div>
+  </div>
+  <button class="motion" id="motion" aria-pressed="true" title="화면 안내 애니메이션 켜기/끄기"><span class="lbl">움직이는 화면</span><span class="sw" aria-hidden="true"></span></button>
+</header>
+<div class="wrap" id="wrap">
+  <button class="navbtn" id="navbtn" aria-label="메뉴 접기" aria-expanded="true" title="메뉴 접기/펼치기"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <nav class="toc" id="toc" aria-label="가이드 목차"></nav>
+  <main>
+    <div class="mobile-nav"><select id="pick" aria-label="화면 선택"></select></div>
+    <article class="page" id="page" aria-live="polite"></article>
+    <footer class="foot"><span id="footlogo"></span>SentBiz 가맹점 대시보드 이용 가이드 · 화면은 실제 서비스와 조금 다를 수 있습니다. 궁금한 점은 센트비 담당자에게 문의해 주세요.</footer>
+  </main>
+</div>
+<div id="lb" class="lb" hidden tabindex="-1" role="dialog" aria-label="확대 보기"><img alt="확대 이미지"><span class="lb-close">닫기 (Esc)</span></div>
+<script>
+const IMG = {"anim_pay_create": "img/anim_pay_create.webp", "st_pay_create": "img/st_pay_create.webp", "full_pay_create": "img/full_pay_create.webp", "anim_pay_link": "img/anim_pay_link.webp", "st_pay_link": "img/st_pay_link.webp", "full_pay_link": "img/full_pay_link.webp", "anim_pay_list": "img/anim_pay_list.webp", "st_pay_list": "img/st_pay_list.webp", "full_pay_list": "img/full_pay_list.webp", "anim_pay_noti": "img/anim_pay_noti.webp", "st_pay_noti": "img/st_pay_noti.webp", "full_pay_noti": "img/full_pay_noti.webp", "n4c": "img/n4c.webp", "n5c": "img/n5c.webp", "n3": "img/n3.webp", "n3__pay-noti-add": "img/n3__pay-noti-add.webp", "n6c": "img/n6c.webp", "m5c": "img/m5c.webp", "anim_pay_noti_test": "img/anim_pay_noti_test.webp", "st_pay_noti_test": "img/st_pay_noti_test.webp", "full_pay_noti_test": "img/full_pay_noti_test.webp", "m2c": "img/m2c.webp", "m4c": "img/m4c.webp", "anim_pay_noti_manage": "img/anim_pay_noti_manage.webp", "st_pay_noti_manage": "img/st_pay_noti_manage.webp", "full_pay_noti_manage": "img/full_pay_noti_manage.webp", "anim_pay_detail": "img/anim_pay_detail.webp", "st_pay_detail": "img/st_pay_detail.webp", "full_pay_detail": "img/full_pay_detail.webp", "b2": "img/b2.webp", "b4": "img/b4.webp", "b5": "img/b5.webp", "b6": "img/b6.webp", "cust_expired": "img/cust_expired.webp", "cust_failed": "img/cust_failed.webp", "b7": "img/b7.webp", "pos_dash": "img/pos_dash.webp", "pos_start": "img/pos_start.webp", "pos_req": "img/pos_req.webp", "pos_qr": "img/pos_qr.webp", "pos_exp": "img/pos_exp.webp", "pos_fail": "img/pos_fail.webp", "pos_done": "img/pos_done.webp", "pos_exit": "img/pos_exit.webp", "anim_refund_start": "img/anim_refund_start.webp", "st_refund_start": "img/st_refund_start.webp", "full_refund_start": "img/full_refund_start.webp", "ref_modal": "img/ref_modal.webp", "ref_qr_exp": "img/ref_qr_exp.webp", "ref_qr": "img/ref_qr.webp", "c1": "img/c1.webp", "c2": "img/c2.webp", "c3": "img/c3.webp", "c4": "img/c4.webp", "c5": "img/c5.webp", "ref_comp": "img/ref_comp.webp", "ref_fail": "img/ref_fail.webp", "ref_exp": "img/ref_exp.webp", "anim_refund_status": "img/anim_refund_status.webp", "st_refund_status": "img/st_refund_status.webp", "full_refund_status": "img/full_refund_status.webp"};
+const PAGES = [{"id": "pay-create", "new": false, "group": "결제", "title": "결제하기", "crumb": "대시보드 > 결제 > 결제하기", "lead": "왼쪽 메뉴에서 [결제 > 결제하기]를 선택합니다. 고객에게 받을 금액을 입력해 결제 QR과 결제 링크를 만들면, 고객은 QR이나 링크로 들어가 본인 휴대폰에서 스테이블코인으로 결제합니다.", "img": "st_pay_create", "full": "full_pay_create", "anim": "anim_pay_create", "w": 1920, "h": 1080, "markers": [[1, 38.958333333333336, 26.296296296296294], [2, 38.958333333333336, 34.81481481481482], [3, 92.70833333333334, 46.666666666666664]], "items": [{"n": 1, "name": "요청 금액", "desc": "고객에게 받을 금액을 원화(KRW)로 입력합니다. 필수 항목이며, 입력한 금액 아래에 한글 금액이 함께 표시됩니다.", "bullets": [], "flag": null}, {"n": 2, "name": "결제 메모", "desc": "결제 건을 구분하기 위한 가맹점 내부용 메모입니다. 고객에게는 보이지 않습니다.", "bullets": ["예: 시술명, 상품명, 담당자 등", "결제 내역 목록과 결제 상세에서 다시 확인할 수 있습니다."], "flag": null}, {"n": 3, "name": "결제하기 버튼", "desc": "입력한 금액으로 결제 QR과 결제 링크가 생성됩니다.", "bullets": [], "flag": null}], "callout": "고객이 결제할 코인과 네트워크는 고객이 결제 페이지에서 직접 선택합니다. 가맹점은 원화 금액만 입력하면 됩니다.", "dialogs": [], "table": null, "layout": null}, {"id": "pay-link", "new": false, "group": "결제", "title": "결제 QR·링크 공유", "crumb": "대시보드 > 결제 > 결제하기 > 생성 완료", "lead": "결제가 생성되면 결제 내역 화면으로 이동하고 결제 QR 팝업이 열립니다. 매장에서는 QR을 보여주고, 비대면이면 링크를 복사해 전달합니다.", "img": "st_pay_link", "full": "full_pay_link", "anim": "anim_pay_link", "w": 1600, "h": 900, "markers": [[1, 38.625, 6.222222222222222], [2, 44.6875, 47.55555555555556], [3, 65.0, 61.66666666666667], [4, 57.99999999999999, 70.88888888888889]], "items": [{"n": 1, "name": "생성 완료 알림", "desc": "\"결제 링크가 생성되었습니다.\" 알림이 표시됩니다.", "bullets": [], "flag": null}, {"n": 2, "name": "결제 QR", "desc": "고객이 휴대폰 카메라로 스캔하면 결제 페이지가 열립니다.", "bullets": [], "flag": null}, {"n": 3, "name": "결제 링크 복사", "desc": "복사 아이콘을 눌러 링크를 복사한 뒤 메신저, 문자 등으로 고객에게 공유합니다.", "bullets": [], "flag": null}, {"n": 4, "name": "닫기", "desc": "팝업을 닫아도 결제 내역 목록의 [클릭해서 URL 복사하기]로 링크를 다시 복사할 수 있습니다.", "bullets": [], "flag": null}], "callout": "결제 링크에는 유효시간이 있습니다. 시간이 지나면 결제할 수 없으니, 만료된 경우 [결제하기]에서 새로 생성해 주세요.", "dialogs": [], "table": null, "layout": null}, {"id": "pay-list", "new": false, "group": "결제", "title": "결제 내역", "crumb": "대시보드 > 결제 > 결제 내역", "lead": "생성한 결제 건의 상태와 금액을 한눈에 확인합니다. 행을 클릭하면 결제 상세로 이동합니다.", "img": "st_pay_list", "full": "full_pay_list", "anim": "anim_pay_list", "w": 1600, "h": 900, "markers": [[1, 14.499999999999998, 18.666666666666668], [2, 13.4375, 41.888888888888886], [3, 53.0, 41.888888888888886], [4, 72.625, 77.44444444444444], [5, 84.6875, 31.88888888888889], [6, 91.75, 9.666666666666666]], "items": [{"n": 1, "name": "검색 조건", "desc": "상태, 고객명, 결제 ID, 요청일자로 결제 건을 찾습니다. [조회]로 검색하고 [초기화]로 조건을 지웁니다.", "bullets": [], "flag": null}, {"n": 2, "name": "결제 URL", "desc": "[클릭해서 URL 복사하기]를 누르면 해당 결제 링크가 복사됩니다. 고객에게 링크를 다시 보내야 할 때 사용합니다.", "bullets": [], "flag": null}, {"n": 3, "name": "상태", "desc": "결제 진행 상태입니다.", "bullets": ["대기: 고객이 아직 결제하지 않음", "결제완료: 결제가 정상 완료됨", "실패: 결제가 완료되지 않음"], "flag": null}, {"n": 4, "name": "메모", "desc": "결제 시 입력한 메모가 일부 표시되고, 마우스를 올리면 전체 내용을 볼 수 있습니다. 메모가 없으면 \"-\"로 표시됩니다.", "bullets": [], "flag": "NEW"}, {"n": 5, "name": "이메일로 내보내기", "desc": "조회한 결제 내역을 엑셀 파일로 받아볼 수 있습니다.", "bullets": [], "flag": null}, {"n": 6, "name": "알림 설정", "desc": "결제 완료 알림을 받을 수신자를 설정합니다.", "bullets": [], "flag": null}], "callout": null, "dialogs": [], "table": null, "layout": null}, {"id": "pay-noti", "new": false, "group": "결제", "title": "알림 설정", "crumb": "대시보드 > 결제 > 결제 내역 > 알림 설정", "lead": "결제가 완료되면 문자로 알림을 받을 번호를 관리합니다. 결제 내역 화면 오른쪽 위의 [알림 설정]을 누르면 오른쪽에 설정 창이 열립니다. 결제하기 화면 위쪽 안내 배너의 [알림 설정하기]로도 열 수 있습니다.", "img": "st_pay_noti", "full": "full_pay_noti", "anim": "anim_pay_noti", "w": 1920, "h": 1080, "markers": [[1, 63.645833333333336, 12.962962962962962], [2, 63.645833333333336, 27.314814814814813], [3, 80.20833333333334, 45.55555555555556], [4, 85.41666666666666, 45.55555555555556], [5, 90.41666666666667, 45.55555555555556], [6, 94.0625, 45.55555555555556], [7, 96.35416666666666, 45.55555555555556], [8, 95.20833333333333, 92.5925925925926]], "items": [{"n": 1, "name": "알림 수신자", "desc": "등록된 수신자 수입니다. 결제가 완료되면 수신이 켜진 번호로 문자를 1회 보냅니다.", "bullets": [], "flag": null}, {"n": 2, "name": "이름 · 휴대폰 번호", "desc": "등록한 수신자의 이름과 번호입니다.", "bullets": [], "flag": null}, {"n": 3, "name": "최근 발송 결과", "desc": "가장 최근 알림 문자의 발송 결과입니다.", "bullets": ["성공: 정상 발송", "실패: 발송 실패. 번호가 맞는지 확인해 주세요.", "발송 이력 없음: 아직 보낸 적이 없음"], "flag": null}, {"n": 4, "name": "수신 여부", "desc": "끄면 해당 번호로 알림을 보내지 않습니다. 수신자를 지우지 않고 잠시 멈출 때 사용합니다.", "bullets": [], "flag": null}, {"n": 5, "name": "테스트 발송", "desc": "번호로 테스트 문자를 보내 확인합니다. 자세한 내용은 테스트 발송 페이지를 참고해 주세요.", "bullets": [], "flag": null}, {"n": 6, "name": "수정", "desc": "이름이나 번호를 고치는 번호 수정 팝업이 열립니다.", "bullets": [], "flag": null}, {"n": 7, "name": "삭제", "desc": "수신자를 목록에서 지웁니다.", "bullets": [], "flag": null}, {"n": 8, "name": "번호 추가", "desc": "새 수신자를 등록하는 번호 추가 팝업이 열립니다.", "bullets": [], "flag": null}], "callout": null, "dialogs": [], "table": null, "layout": null}, {"id": "pay-noti-add", "new": false, "group": "결제", "title": "알림 수신자 추가 · 수정", "crumb": "알림 설정 > 번호 추가", "lead": "알림 설정 창의 [번호 추가]를 누르면 열리는 팝업입니다. 수정 아이콘을 누르면 같은 형식의 번호 수정 팝업이 열립니다.", "img": "n3__pay-noti-add", "full": "n3", "anim": null, "w": 600, "h": 370, "markers": [[1, 92.5, 41.08108108108108], [2, 36.666666666666664, 62.16216216216216], [3, 92.5, 62.16216216216216], [4, 87.33333333333333, 77.02702702702703]], "items": [{"n": 1, "name": "이름", "desc": "수신자 이름을 입력합니다. 필수 항목입니다.", "bullets": [], "flag": null}, {"n": 2, "name": "국가", "desc": "휴대폰 번호의 국가(국가 번호)를 선택합니다. 필수 항목입니다.", "bullets": [], "flag": null}, {"n": 3, "name": "휴대폰 번호", "desc": "휴대폰 번호를 입력합니다. 필수 항목입니다.", "bullets": [], "flag": null}, {"n": 4, "name": "저장", "desc": "필수 항목을 모두 입력하면 활성화됩니다. 누르면 \"알림 수신자가 추가되었습니다.\" 안내가 뜨고, 목록에 수신이 켜진 상태로 추가됩니다.", "bullets": [], "flag": null}], "callout": null, "dialogs": [{"img": "n4c", "cap": "번호 수정: 등록된 이름과 번호가 채워진 상태로 열리고, [수정]을 누르면 저장됩니다."}, {"img": "n5c", "cap": "추가 완료: 목록에 새 수신자가 \"발송 이력 없음\" 상태로 추가됩니다."}], "table": null, "layout": "side"}, {"id": "pay-noti-test", "new": false, "group": "결제", "title": "테스트 발송", "crumb": "알림 설정 > 테스트 발송", "lead": "등록한 번호로 알림 문자가 실제로 가는지 미리 확인하는 기능입니다. 새 번호를 추가하거나 번호를 고친 뒤에는 테스트 발송으로 한 번 확인해 두는 것을 권장합니다.", "img": "st_pay_noti_test", "full": "full_pay_noti_test", "anim": "anim_pay_noti_test", "w": 1920, "h": 1080, "markers": [[1, 90.41666666666667, 48.333333333333336], [2, 80.20833333333334, 48.333333333333336]], "items": [{"n": 1, "name": "테스트 발송", "desc": "해당 번호로 테스트 문자를 1건 보냅니다.", "bullets": [], "flag": null}, {"n": 2, "name": "최근 발송 결과", "desc": "테스트 결과가 바로 반영됩니다.", "bullets": ["성공: 화면 위에 \"테스트 알림이 발송되었습니다.\" 안내가 뜹니다. 휴대폰에 문자가 왔는지 확인해 주세요.", "실패: \"테스트 알림 발송이 실패했습니다. 다시 시도해주세요.\" 안내가 뜹니다. 번호와 국가가 맞는지 확인하고 수정한 뒤 다시 보내 주세요."], "flag": null}], "callout": null, "dialogs": [{"img": "n6c", "cap": "테스트 발송 성공"}, {"img": "m5c", "cap": "테스트 발송 실패: 최근 발송 결과가 실패로 바뀝니다."}], "table": null, "layout": null}, {"id": "pay-noti-manage", "new": false, "group": "결제", "title": "수신자 관리", "crumb": "알림 설정 > 수신 관리", "lead": "등록된 수신자를 잠시 멈추거나, 정보를 고치거나, 지울 수 있습니다.", "img": "st_pay_noti_manage", "full": "full_pay_noti_manage", "anim": "anim_pay_noti_manage", "w": 1920, "h": 1080, "markers": [[1, 85.41666666666666, 45.55555555555556], [2, 94.0625, 45.55555555555556], [3, 96.35416666666666, 45.55555555555556]], "items": [{"n": 1, "name": "수신 여부", "desc": "켜져 있는 번호에만 결제 완료 알림이 갑니다. 담당자가 휴가 중일 때처럼 잠시 받지 않을 때는 지우지 말고 꺼 두세요. 다시 켜면 바로 알림을 받습니다.", "bullets": [], "flag": null}, {"n": 2, "name": "수정", "desc": "번호 수정 팝업에서 이름과 번호를 고친 뒤 [수정]을 누릅니다. 저장되면 \"수신자 정보가 수정되었습니다.\" 안내가 뜹니다.", "bullets": [], "flag": null}, {"n": 3, "name": "삭제", "desc": "수신자를 목록에서 지웁니다. 지워지면 \"알림 수신자가 삭제되었습니다.\" 안내가 뜨고 수신자 수가 줄어듭니다.", "bullets": [], "flag": null}], "callout": "같은 실패가 계속되면 센트비에 문의해 주세요.", "dialogs": [{"img": "m2c", "cap": "수정 완료"}, {"img": "m4c", "cap": "삭제 완료"}], "table": {"title": "처리 결과 안내 문구", "head": ["상황", "화면에 뜨는 안내", "할 일"], "rows": [["수신자 추가 성공", "알림 수신자가 추가되었습니다.", "테스트 발송으로 번호 확인"], ["수신자 추가 실패", "알림 수신자 추가에 실패했습니다. 다시 시도해주세요.", "입력값 확인 후 다시 저장"], ["정보 수정 성공", "수신자 정보가 수정되었습니다.", "테스트 발송으로 번호 확인"], ["정보 수정 실패", "수신자 정보 수정이 실패했습니다. 다시 시도해주세요.", "잠시 후 다시 시도"], ["삭제 성공", "알림 수신자가 삭제되었습니다.", "별도 조치 없음"], ["삭제 실패", "알림 수신자 삭제에 실패했습니다. 다시 시도해주세요.", "잠시 후 다시 시도"], ["테스트 발송 성공", "테스트 알림이 발송되었습니다.", "휴대폰 문자 수신 확인"], ["테스트 발송 실패", "테스트 알림 발송이 실패했습니다. 다시 시도해주세요.", "번호·국가 확인 후 수정, 다시 발송"]]}, "layout": null}, {"id": "pay-detail", "new": false, "group": "결제", "title": "결제 상세", "crumb": "대시보드 > 결제 > 결제 내역 > 결제 상세", "lead": "결제 건 하나의 금액, 수수료, 고객 정보를 확인합니다. 환불도 이 화면에서 시작합니다.", "img": "st_pay_detail", "full": "full_pay_detail", "anim": "anim_pay_detail", "w": 1600, "h": 1072, "markers": [[1, 91.125, 12.126865671641792], [2, 89.875, 19.30970149253731], [3, 43.0, 22.574626865671643], [4, 70.25, 22.574626865671643], [5, 70.25, 25.652985074626866], [6, 15.187500000000002, 34.79477611940299], [7, 56.25, 34.79477611940299]], "items": [{"n": 1, "name": "환불 요청", "desc": "결제 완료 건에서 환불을 시작합니다. 자세한 방법은 환불 요청 가이드를 참고해 주세요.", "bullets": [], "flag": null}, {"n": 2, "name": "결제 상태", "desc": "결제 완료, 환불 진행 중 등 현재 상태가 표시됩니다.", "bullets": [], "flag": null}, {"n": 3, "name": "결제금액", "desc": "고객이 실제로 결제한 금액(USD)입니다.", "bullets": [], "flag": null}, {"n": 4, "name": "정산 대상 금액", "desc": "이 결제 건으로 가맹점에 정산될 금액입니다.", "bullets": [], "flag": null}, {"n": 5, "name": "수수료", "desc": "이 결제 건에 적용된 수수료입니다.", "bullets": [], "flag": null}, {"n": 6, "name": "결제 정보", "desc": "결제 ID, 결제 링크, 만료 일시, 메모를 확인합니다. 결제 ID와 링크는 복사 아이콘으로 복사할 수 있습니다.", "bullets": [], "flag": null}, {"n": 7, "name": "고객 정보", "desc": "고객이 결제 페이지에서 입력한 이름, 이메일, 연락처, 주소 등이 표시됩니다.", "bullets": [], "flag": null}], "callout": null, "dialogs": [], "table": null, "layout": null}, {"id": "cust-info", "new": false, "group": "고객 결제 화면", "title": "동의 · 구매자 정보 입력", "crumb": "고객 휴대폰 > 결제 페이지 > 정보 입력", "lead": "고객이 결제 QR을 스캔하거나 결제 링크를 열면 가장 먼저 보는 화면입니다. 개인정보 이용에 동의하고 구매자 정보를 입력합니다.", "img": "b2", "full": "b2", "anim": null, "w": 552, "h": 744, "markers": [[1, 15.942028985507244, 20.56451612903226], [2, 15.942028985507244, 40.32258064516129], [3, 15.942028985507244, 51.61290322580645], [4, 15.942028985507244, 62.903225806451616], [5, 15.942028985507244, 74.19354838709677], [6, 15.942028985507244, 85.48387096774194]], "items": [{"n": 1, "name": "개인정보 수집·이용 동의", "desc": "센트비가 Triple-A를 대신해 결제 정보를 수집·이용하는 데 동의합니다. 동의해야 아래 입력칸이 열리고 다음으로 넘어갈 수 있습니다.", "bullets": [], "flag": null}, {"n": 2, "name": "Buyer Name", "desc": "구매자 이름을 입력합니다. 필수 항목입니다.", "bullets": [], "flag": null}, {"n": 3, "name": "Email", "desc": "구매자 이메일을 입력합니다. 필수 항목이며, 환불 신청 시 본인 확인에 이 이메일을 사용합니다.", "bullets": [], "flag": null}, {"n": 4, "name": "Country", "desc": "구매자 국가를 선택합니다. 필수 항목입니다.", "bullets": ["요청 금액이 USD 1,500 이상이면 도시(City)와 상세 주소(Detailed Address)도 함께 입력합니다."], "flag": null}, {"n": 5, "name": "Phone Number", "desc": "국가 번호를 고르고 전화번호를 입력합니다. 선택 항목입니다.", "bullets": [], "flag": null}, {"n": 6, "name": "Proceed to payment", "desc": "필수 항목을 모두 입력하면 활성화됩니다. 누르면 다음 단계로 넘어갑니다.", "bullets": [], "flag": null}], "callout": null, "dialogs": [], "table": null, "layout": null}, {"id": "cust-id", "new": false, "group": "고객 결제 화면", "title": "신분증 업로드 (USD 1,500 이상)", "crumb": "고객 휴대폰 > 결제 페이지 > 인증 파일", "lead": "요청 금액이 USD 1,500 이상인 결제에서만 나오는 화면입니다. 구매자 본인 확인을 위해 정부 발급 신분증을 올립니다.", "img": "b4", "full": "b4", "anim": null, "w": 552, "h": 692, "markers": [[1, 15.942028985507244, 28.901734104046245], [2, 15.942028985507244, 84.39306358381504]], "items": [{"n": 1, "name": "Upload Verification File", "desc": "신분증 파일을 올립니다. PDF, JPG, JPEG, PNG 파일을 올릴 수 있고, 올린 파일은 휴지통 아이콘으로 지울 수 있습니다.", "bullets": [], "flag": null}, {"n": 2, "name": "Submit", "desc": "파일을 올린 뒤 누르면 결제 단계로 넘어갑니다.", "bullets": [], "flag": null}], "callout": null, "dialogs": [], "table": null, "layout": null}, {"id": "cust-coin", "new": false, "group": "고객 결제 화면", "title": "코인 선택", "crumb": "고객 휴대폰 > 결제 페이지 > 코인 선택", "lead": "결제할 금액을 확인하고 어떤 스테이블코인으로 낼지 고릅니다.", "img": "b5", "full": "b5", "anim": null, "w": 1000, "h": 886, "markers": [[1, 19.5, 36.11738148984199], [2, 19.5, 68.2844243792325]], "items": [{"n": 1, "name": "Amount to be paid", "desc": "결제할 금액을 USD로 보여줍니다.", "bullets": [], "flag": null}, {"n": 2, "name": "Select a cryptocurrency", "desc": "USDC(Circle) 또는 USDT(Tether) 중 결제할 코인을 고릅니다.", "bullets": [], "flag": null}], "callout": null, "dialogs": [], "table": null, "layout": null}, {"id": "cust-send", "new": false, "group": "고객 결제 화면", "title": "송금", "crumb": "고객 휴대폰 > 결제 페이지 > 송금", "lead": "고객이 안내된 주소로 코인을 보내는 화면입니다. 주소를 복사해 지갑이나 거래소에서 보내거나, QR을 스캔해 지갑 앱에서 바로 보낼 수 있습니다.", "img": "b6", "full": "b6", "anim": null, "w": 552, "h": 853, "markers": [[1, 15.942028985507244, 19.343493552168816], [2, 15.942028985507244, 26.377491207502928], [3, 15.942028985507244, 39.038686987104334], [4, 15.942028985507244, 45.1348182883939], [5, 31.70289855072464, 63.305978898007034], [6, 15.942028985507244, 83.11840562719811], [7, 15.942028985507244, 88.74560375146542]], "items": [{"n": 1, "name": "Total", "desc": "결제 총액(USD)입니다.", "bullets": [], "flag": null}, {"n": 2, "name": "Amount due", "desc": "고객이 보내야 하는 정확한 코인 수량과 코인, 네트워크입니다. 오른쪽 아이콘으로 수량을 복사할 수 있습니다.", "bullets": ["반드시 이 수량 그대로 보내야 합니다."], "flag": null}, {"n": 3, "name": "입금 주소", "desc": "이 결제 건에 발급된 입금 주소입니다. 위쪽 띠에 보낼 수 있는 네트워크(예: Ethereum Network only)가 표시되고, 오른쪽 아이콘으로 주소를 복사합니다.", "bullets": [], "flag": null}, {"n": 4, "name": "네트워크 주의 문구", "desc": "안내된 네트워크가 아닌 다른 네트워크로 보내면 자산을 잃을 수 있다는 안내입니다.", "bullets": [], "flag": null}, {"n": 5, "name": "QR 코드", "desc": "지갑 앱으로 스캔하면 됩니다.", "bullets": [], "flag": null}, {"n": 6, "name": "Open in Wallet", "desc": "휴대폰에 설치된 지갑 앱을 바로 열 수 있는 버튼입니다.", "bullets": [], "flag": null}, {"n": 7, "name": "남은 시간", "desc": "송금할 수 있는 남은 시간입니다. 시간이 지나면 이 화면으로는 결제할 수 없습니다.", "bullets": [], "flag": null}], "callout": "주의:고객은 결제 화면에 안내된 크립토 수량을 정확히 보내야 합니다. 적게 도착하면 결제가 완료되지 않습니다. 고객에게 결제를 안내할 때 꼭 함께 알려 주세요.", "dialogs": [], "table": null, "layout": null}, {"id": "cust-done", "new": false, "group": "고객 결제 화면", "title": "결제 결과", "crumb": "고객 휴대폰 > 결제 페이지 > 결과", "lead": "입금이 확인되면 고객 화면에 결제 완료가 표시됩니다. 가맹점은 대시보드 결제 내역에서 결제완료 상태를 확인할 수 있습니다. 결제 유효시간이 지나거나 결제가 실패하면 아래 화면이 표시됩니다.", "img": "b7", "full": "b7", "anim": null, "w": 960, "h": 770, "markers": [[1, 21.5625, 65.1948051948052]], "items": [{"n": 1, "name": "Payment Complete", "desc": "결제가 확인되었다는 안내입니다.", "bullets": [], "flag": null}], "callout": null, "dialogs": [{"img": "cust_expired", "cap": "결제 만료(Expired): 결제 유효시간이 지나 결제가 종료된 화면입니다. 고객 자산은 빠져나가지 않았습니다. 다시 결제하려면 새 결제 QR·링크를 만들어 전달해 주세요."}, {"img": "cust_failed", "cap": "결제 실패(Failed): 결제가 실패한 화면입니다. 고객에게 다시 결제하도록 안내해 주세요."}], "table": null, "layout": null}, {"id": "pos-enter", "new": true, "group": "POS 모드", "title": "POS 모드 진입", "crumb": "대시보드 > 결제 > 결제하기", "lead": "매장에서 태블릿으로 결제를 받을 때 사용하는 화면입니다. 기존 대시보드에 로그인한 뒤 결제하기 화면에서 POS 모드로 들어갑니다.", "img": "pos_dash", "full": "pos_dash", "anim": null, "w": 1080, "h": 810, "markers": [[1, 85.64814814814815, 22.22222222222222]], "items": [{"n": 1, "name": "POS 모드", "desc": "결제하기 화면 오른쪽 위의 [POS 모드] 버튼을 누르면 POS 시작 화면으로 전환됩니다.", "bullets": [], "flag": null}], "callout": "별도 앱 설치 없이 태블릿 브라우저에서 기존 대시보드 계정으로 로그인해 사용합니다. 태블릿 가로 화면에 맞춰 표시됩니다.", "dialogs": [], "table": null, "layout": null}, {"id": "pos-start", "new": true, "group": "POS 모드", "title": "POS 시작 화면", "crumb": "POS 모드 > 시작", "lead": "POS 모드의 첫 화면입니다. 결제를 시작하거나 대시보드로 돌아갈 수 있습니다.", "img": "pos_start", "full": "pos_start", "anim": null, "w": 1080, "h": 810, "markers": [[1, 51.11111111111111, 72.8395061728395], [2, 17.40740740740741, 72.8395061728395]], "items": [{"n": 1, "name": "결제 시작하기", "desc": "결제 요청 화면으로 이동합니다.", "bullets": [], "flag": null}, {"n": 2, "name": "POS 모드 나가기", "desc": "POS 모드를 끄고 대시보드 결제하기 화면으로 돌아갑니다.", "bullets": [], "flag": null}], "callout": null, "dialogs": [], "table": null, "layout": null}, {"id": "pos-request", "new": true, "group": "POS 모드", "title": "결제 요청", "crumb": "POS 모드 > 결제 요청", "lead": "받을 금액을 입력하고 고객에게 보여줄 QR을 만듭니다.", "img": "pos_req", "full": "pos_req", "anim": null, "w": 1080, "h": 810, "markers": [[1, 20.555555555555554, 3.950617283950617], [2, 4.166666666666666, 28.76543209876543], [3, 4.166666666666666, 42.098765432098766], [4, 4.166666666666666, 51.48148148148148], [5, 92.5925925925926, 3.8271604938271606]], "items": [{"n": 1, "name": "가맹점명 · POS 모드", "desc": "현재 POS 모드로 사용 중임을 표시합니다.", "bullets": [], "flag": null}, {"n": 2, "name": "요청 금액", "desc": "받을 금액을 원화(KRW)로 입력합니다. 입력칸을 누르면 태블릿 숫자 키패드가 올라옵니다.", "bullets": [], "flag": null}, {"n": 3, "name": "결제 메모 (선택)", "desc": "가맹점 내부용 메모입니다. 고객에게는 보이지 않으며, 대시보드 결제 내역에서 확인할 수 있습니다.", "bullets": [], "flag": null}, {"n": 4, "name": "QR 생성", "desc": "입력한 금액으로 고객용 QR 화면이 열립니다.", "bullets": [], "flag": null}, {"n": 5, "name": "닫기(X)", "desc": "POS 모드 나가기 확인 팝업이 열립니다.", "bullets": [], "flag": null}], "callout": null, "dialogs": [], "table": null, "layout": null}, {"id": "pos-qr", "new": true, "group": "POS 모드", "title": "고객용 QR 화면", "crumb": "POS 모드 > 고객용 QR", "lead": "태블릿 화면을 고객에게 보여주고 QR을 스캔하게 합니다. 고객 휴대폰에서 결제 페이지가 열리고, 코인·네트워크 선택과 송금은 고객이 직접 진행합니다. 고객이 결제를 마치면 화면이 자동으로 결제 결과 화면(완료/만료/실패)으로 바뀝니다.", "img": "pos_qr", "full": "pos_qr", "anim": null, "w": 1080, "h": 810, "markers": [[1, 23.796296296296298, 7.901234567901234], [2, 6.296296296296296, 53.95061728395062], [3, 44.44444444444444, 52.46913580246913], [4, 92.12962962962963, 7.901234567901234]], "items": [{"n": 1, "name": "언어 선택", "desc": "한국어, English, 中文 중 고객이 읽기 편한 언어로 화면을 바꿉니다.", "bullets": [], "flag": null}, {"n": 2, "name": "결제 QR", "desc": "고객이 휴대폰 카메라로 스캔하면 결제 페이지가 열립니다. 바로 결제되는 QR이 아니라 결제 페이지로 연결되는 QR이며, 이후 진행은 고객 결제 화면 가이드와 같습니다.", "bullets": [], "flag": null}, {"n": 3, "name": "결제하실 금액", "desc": "가맹점명과 결제 금액(원화)이 표시됩니다.", "bullets": [], "flag": null}, {"n": 4, "name": "닫기(X)", "desc": "POS 모드 나가기 확인 팝업이 열립니다. 나가더라도 이 결제 건은 대시보드 결제 내역에서 확인할 수 있습니다.", "bullets": [], "flag": null}], "callout": "주의:고객은 결제 화면에 안내된 크립토 수량을 정확히 보내야 합니다. 적게 도착하면 결제가 완료되지 않습니다. 거래소에서 보내는 경우 출금 수수료가 빠진 뒤 도착하므로, 수수료만큼 더해서 보내도록 안내해 주세요.", "dialogs": [], "table": null, "layout": null}, {"id": "pos-result", "new": true, "group": "POS 모드", "title": "결제 결과", "crumb": "POS 모드 > 결제 결과", "lead": "고객 결제 결과에 따라 완료, 만료, 실패 화면 중 하나가 표시됩니다.", "img": "pos_done", "full": "pos_done", "anim": null, "w": 1080, "h": 810, "markers": [[1, 23.61111111111111, 60.74074074074074], [2, 23.61111111111111, 75.30864197530865]], "items": [{"n": 1, "name": "결제 완료 정보", "desc": "결제 일시, 결제 ID, 결제 금액(USD), 고객 정보가 표시됩니다.", "bullets": [], "flag": null}, {"n": 2, "name": "결제 요청 화면으로", "desc": "다음 결제를 받을 수 있도록 결제 요청 화면으로 돌아갑니다. 만료·실패 화면에도 같은 버튼이 있습니다.", "bullets": [], "flag": null}], "callout": null, "dialogs": [{"img": "pos_exp", "cap": "결제 만료: 결제 유효시간 안에 고객이 결제하지 않은 경우입니다. 다시 결제 요청을 만들어 주세요."}, {"img": "pos_fail", "cap": "결제 실패: 결제가 완료되지 않은 경우입니다. [결제 요청 화면으로]를 눌러 다시 진행할 수 있습니다."}], "table": null, "layout": null}, {"id": "pos-exit", "new": true, "group": "POS 모드", "title": "POS 모드 나가기", "crumb": "POS 모드 > 나가기", "lead": "POS 모드 화면 오른쪽 위의 [X]를 누르면 나가기 확인 팝업이 열립니다.", "img": "pos_exit", "full": "pos_exit", "anim": null, "w": 1080, "h": 810, "markers": [[1, 34.44444444444444, 52.8395061728395], [2, 50.46296296296296, 52.8395061728395]], "items": [{"n": 1, "name": "닫기", "desc": "팝업만 닫고 POS 모드를 계속 사용합니다.", "bullets": [], "flag": null}, {"n": 2, "name": "나가기", "desc": "POS 모드를 종료하고 대시보드로 돌아갑니다. POS 모드는 결제하기 화면에서 언제든 다시 켤 수 있습니다.", "bullets": [], "flag": null}], "callout": null, "dialogs": [], "table": null, "layout": null}, {"id": "refund-start", "new": true, "group": "환불 요청", "title": "환불 요청 시작", "crumb": "대시보드 > 결제 > 결제 내역 > 결제 상세", "lead": "고객이 환불을 원하면 가맹점이 대시보드에서 환불을 요청합니다. 환불할 결제 건의 결제 상세에서 시작합니다.", "img": "st_refund_start", "full": "full_refund_start", "anim": "anim_refund_start", "w": 1600, "h": 1072, "markers": [[1, 91.125, 12.126865671641792], [2, 89.875, 19.30970149253731]], "items": [{"n": 1, "name": "환불 요청", "desc": "결제 완료 상태인 건에서 활성화됩니다. 누르면 환불 요청 팝업이 열립니다.", "bullets": [], "flag": null}, {"n": 2, "name": "결제 상태", "desc": "결제 완료 건만 환불을 요청할 수 있습니다. 이미 환불이 진행 중이면 버튼이 비활성화됩니다.", "bullets": [], "flag": null}], "callout": "환불은 결제 금액 전체를 대상으로 합니다(부분 환불 불가).", "dialogs": [], "table": null, "layout": null}, {"id": "refund-reason", "new": true, "group": "환불 요청", "title": "환불 사유 선택", "crumb": "결제 상세 > 환불 요청", "lead": "환불 사유를 고르면 고객에게 보여줄 환불 QR이 발급됩니다.", "img": "ref_modal", "full": "ref_modal", "anim": null, "w": 640, "h": 862, "markers": [[1, 4.6875, 24.361948955916475], [2, 4.6875, 51.04408352668214], [3, 4.6875, 75.9860788863109], [4, 78.125, 88.16705336426914]], "items": [{"n": 1, "name": "결제 정보", "desc": "환불할 결제 건의 결제 ID, 고객, 요청금액, 결제금액을 확인합니다.", "bullets": [], "flag": null}, {"n": 2, "name": "환불 사유", "desc": "아래 세 가지 중 하나를 선택합니다.", "bullets": ["고객 책임: 단순 변심, 고객의 주문·예약 취소", "가맹점 책임: 상품·서비스 문제, 가맹점의 주문·예약 취소", "결제 오류: 중복 결제, 결제 시스템 오류 (센트비 확인 요청)"], "flag": null}, {"n": 3, "name": "메모 (선택)", "desc": "내부 기록용 메모입니다. 고객에게는 보이지 않습니다.", "bullets": [], "flag": null}, {"n": 4, "name": "환불 요청", "desc": "환불 QR이 발급됩니다. [취소]를 누르면 요청하지 않고 닫힙니다.", "bullets": [], "flag": null}], "callout": "선택한 환불 사유에 따라 고객 환불 금액과 정산 차감 금액이 달라집니다. 금액은 다음 단계인 환불 QR 발급 화면에서 확인할 수 있습니다.", "dialogs": [], "table": null, "layout": null}, {"id": "refund-qr", "new": true, "group": "환불 요청", "title": "환불 QR 발급", "crumb": "결제 상세 > 환불 요청 > 환불 QR 발급 완료", "lead": "발급된 환불 QR을 고객에게 보여줍니다. 고객이 QR을 스캔해 환불 사유와 금액에 동의하고 지갑 주소를 제출하면 환불이 접수됩니다.", "img": "ref_qr", "full": "ref_qr", "anim": null, "w": 640, "h": 728, "markers": [[1, 35.625, 34.34065934065934], [2, 95.625, 63.04945054945055], [3, 95.625, 66.8956043956044], [4, 95.625, 70.87912087912088], [5, 5.0, 75.41208791208791], [6, 78.125, 85.98901098901099]], "items": [{"n": 1, "name": "환불 QR", "desc": "고객이 휴대폰으로 스캔하면 환불 신청 페이지가 열립니다.", "bullets": [], "flag": null}, {"n": 2, "name": "고객 환불 금액", "desc": "고객에게 돌려줄 금액(USD)입니다. 환불 사유에 따라 달라집니다.", "bullets": [], "flag": null}, {"n": 3, "name": "정산 차감 금액", "desc": "이 환불로 가맹점 정산금에서 차감되는 금액입니다.", "bullets": [], "flag": null}, {"n": 4, "name": "환불 링크", "desc": "고객이 QR을 스캔하기 어려우면 링크를 복사해 전달합니다.", "bullets": [], "flag": null}, {"n": 5, "name": "만료 일시", "desc": "환불 QR은 15분 동안 유효합니다. 남은 시간이 함께 표시됩니다.", "bullets": [], "flag": null}, {"n": 6, "name": "확인", "desc": "팝업을 닫고 결제 상세로 돌아갑니다.", "bullets": [], "flag": null}], "callout": "환불 QR은 발급 후 15분 안에 고객이 제출해야 합니다. 고객 앞에서 바로 QR을 보여주는 것을 권장합니다.", "dialogs": [{"img": "ref_qr_exp", "cap": "QR 유효 시간(15분)이 지나면 QR이 흐리게 바뀝니다. 환불을 다시 진행하려면 결제 상세에서 [환불 요청]을 다시 눌러 주세요."}], "table": null, "layout": null}, {"id": "refund-customer", "new": true, "group": "환불 요청", "title": "고객 환불 신청 화면", "crumb": "고객 휴대폰 > 환불 신청 페이지", "lead": "고객이 환불 QR을 스캔한 뒤 보게 되는 화면입니다. 고객 문의에 안내할 때 참고해 주세요.", "img": null, "full": null, "anim": null, "w": null, "h": null, "markers": [], "items": [{"n": 1, "name": "본인 확인 (Refund Verification)", "desc": "결제할 때 사용한 이메일 주소를 입력해 본인 확인을 합니다.", "bullets": [], "flag": null}, {"n": 2, "name": "지갑 주소 확인 (Refund Request)", "desc": "결제 시 입력한 지갑 주소가 기본으로 채워져 있습니다. 바꾸려면 결제한 코인·네트워크와 같은 지갑 주소를 입력한 뒤 [Next]를 누릅니다.", "bullets": [], "flag": null}, {"n": 3, "name": "환불 요청 확인 (Review Your Request)", "desc": "원 결제 금액, 결제 네트워크, 환불 금액(USD), 지갑 주소를 확인하고 [Submit Refund Request]를 누릅니다.", "bullets": [], "flag": null}, {"n": 4, "name": "제출 전 확인 (Before you continue)", "desc": "송금 취소 불가, 올바른 네트워크, 정확한 주소, 처리 시점 환율 4가지 유의사항에 동의하고 [Confirm & continue]를 누릅니다.", "bullets": [], "flag": null}, {"n": 5, "name": "접수 완료 (Refund Request Received)", "desc": "환불 신청이 접수됩니다. 환불은 영업일 기준 5일 이내에 고객 지갑으로 보내집니다.", "bullets": [], "flag": null}], "callout": "거래소 주소나 다른 네트워크 주소로 환불받으면 자산을 잃을 수 있습니다. 고객에게 결제한 것과 같은 코인·네트워크의 본인 지갑 주소를 입력하도록 안내해 주세요.", "dialogs": [{"img": "c1", "cap": "① 본인 확인"}, {"img": "c2", "cap": "② 지갑 주소 확인"}, {"img": "c3", "cap": "③ 환불 요청 확인"}, {"img": "c4", "cap": "④ 제출 전 확인"}, {"img": "c5", "cap": "⑤ 접수 완료"}], "table": null, "layout": null}, {"id": "refund-status", "new": true, "group": "환불 요청", "title": "환불 진행 상태 확인", "crumb": "대시보드 > 결제 상세 (고객 제출 이후)", "lead": "고객이 환불 신청을 제출하면 환불이 접수되고, 센트비가 확인한 뒤 환불을 실행합니다. 진행 상태는 결제 상세에서 확인합니다.", "img": "st_refund_status", "full": "full_refund_status", "anim": "anim_refund_status", "w": 1600, "h": 1300, "markers": [[1, 82.875, 10.0], [2, 89.0625, 15.846153846153847], [3, 55.50000000000001, 64.23076923076924]], "items": [{"n": 1, "name": "환불 접수 안내", "desc": "\"환불이 접수되었습니다.\" 문구가 표시되고, 환불이 진행되는 동안 [환불 요청] 버튼은 비활성화됩니다.", "bullets": [], "flag": null}, {"n": 2, "name": "상태 배지", "desc": "환불 진행 중으로 표시됩니다. 센트비 처리가 끝나면 환불 완료 또는 환불 실패로 바뀝니다.", "bullets": [], "flag": null}, {"n": 3, "name": "환불 정보", "desc": "환불 ID, 환불 사유, 환불 요청금액, 고객 환불 금액, 정산 차감 금액, 요청 일시, 요청자, 메모를 확인합니다.", "bullets": [], "flag": null}], "callout": null, "dialogs": [{"img": "ref_comp", "cap": "환불 완료: 고객 지갑으로 환불이 완료된 상태입니다. 환불 완료 일시가 표시됩니다."}, {"img": "ref_fail", "cap": "환불 실패: 환불 전송이 실패한 경우입니다. [환불 요청] 버튼이 다시 활성화되어 재요청할 수 있습니다."}, {"img": "ref_exp", "cap": "환불 만료: 고객이 QR 발급 후 15분 안에 제출하지 않은 경우입니다. [환불 요청]으로 다시 요청할 수 있습니다."}], "table": {"head": ["상태", "언제", "가맹점이 할 일"], "rows": [["환불 진행 중", "고객이 환불 신청을 제출해 접수됨", "센트비 처리 대기 (영업일 기준 5일 이내 환불)"], ["환불 완료", "센트비가 환불을 실행해 고객 지갑으로 전송됨", "별도 조치 없음"], ["환불 실패", "환불 전송에 실패함", "[환불 요청]으로 다시 요청하거나 센트비에 문의"], ["환불 만료", "QR 발급 후 15분 안에 고객이 제출하지 않음", "필요하면 [환불 요청]으로 다시 요청"]]}, "layout": null}];
+const OV = {"changes": [["POS 모드", "매장 태블릿에서 금액을 입력하고 고객용 QR로 바로 결제를 받을 수 있습니다."], ["환불 요청", "대시보드에서 환불 사유를 고르고 환불 QR을 발급해 고객에게 환불할 수 있습니다."], ["결제 내역 메모", "결제 내역 목록에서 메모 내용을 바로 확인할 수 있습니다."]]};
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const START = {id:"start", group:"시작하기", title:"가이드 개요"};
+const ALL = [START, ...PAGES];
+const GROUPS = [...new Set(PAGES.map(p => p.group))];
+const GDESC = {
+  "결제":"금액을 입력해 결제 QR·링크를 만들고, 결제 내역과 상세에서 결과를 확인합니다.",
+  "고객 결제 화면":"고객이 QR이나 링크로 들어와 정보를 입력하고 코인을 보내 결제를 마치는 과정입니다.",
+  "POS 모드":"매장 태블릿에서 금액 입력 후 고객용 QR을 보여주고 결제 결과를 바로 확인합니다.",
+  "환불 요청":"결제 상세에서 환불 사유를 골라 환불 QR을 발급하고, 고객 제출 후 진행 상태를 확인합니다."
+};
+const QUICK = [
+  ["pay-create","결제 QR 만들기","금액만 입력하면 고객이 바로 결제할 수 있는 QR과 링크가 만들어집니다."],
+  ["cust-send","고객 송금 화면","고객이 안내된 수량 그대로 코인을 보내야 결제가 완료됩니다."],
+  ["pos-enter","POS 모드 시작하기","매장 태블릿에서 앱 설치 없이 바로 결제를 받습니다."],
+  ["refund-start","환불 요청하기","결제 상세에서 환불 QR을 발급해 고객에게 보여줍니다."],
+  ["pay-noti","결제 알림 받기","결제가 끝나면 등록한 번호로 문자 알림을 받습니다."]
+];
+const GICON = {
+  "결제":'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg>',
+  "고객 결제 화면":'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>',
+  "POS 모드":'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="15" rx="3"/><path d="M9 22h6"/></svg>',
+  "환불 요청":'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>'
+};
+const WMW = `<svg class="wm-w" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 20" fill="#fff" role="img" aria-label="SentBiz"><path d="M79.7657 5.07236V8.29315H87.2697V8.3431L79.7657 16.1981V19.4189H91.9999V16.1981H84.52V16.1481L91.9999 8.29315V5.07236H79.7657Z"/><path d="M77.6408 19.4173V4.76552H74.1236V19.4173H77.6408ZM74.4953 3.30774C74.8744 3.67959 75.3367 3.86458 75.8822 3.86458C76.4277 3.86458 76.89 3.67959 77.2691 3.30774C77.6482 2.9359 77.8386 2.47711 77.8386 1.93322C77.8386 1.38933 77.6445 0.950883 77.2561 0.56979C76.8678 0.190547 76.4092 0 75.8822 0C75.3552 0 74.8947 0.190547 74.5083 0.56979C74.1199 0.949033 73.9258 1.40413 73.9258 1.93322C73.9258 2.46231 74.1162 2.9359 74.4953 3.30774Z"/><path d="M69.7885 9.31024C70.7649 8.40376 71.4972 7.01813 71.4972 5.69355C71.4972 2.69476 68.7622 0.373047 65.8294 0.373047H57.7578V11.1695V19.4037H66.6745C69.5962 19.4037 72.4384 17.1412 72.394 13.8482C72.4199 11.9372 71.2364 10.2722 69.7885 9.31024ZM61.2916 3.46249H65.6038C66.8335 3.46249 67.9597 4.45592 67.943 5.7731C67.9578 7.09028 66.8335 8.08371 65.6038 8.08371H61.2916V3.46434V3.46249ZM66.3713 11.1695C67.5973 11.1695 68.9065 12.2258 68.8843 13.7705C68.9046 15.3152 67.5954 16.3272 66.3713 16.3272H61.2916V11.1713H66.3713V11.1695Z"/><path d="M11.1135 7.97656H14.6436V12.7032C14.6436 16.405 11.6442 19.4057 7.94404 19.4057H0V15.8741H7.91076C9.68042 15.8741 11.1135 14.4385 11.1135 12.6699V7.97841V7.97656Z"/><path d="M3.53007 11.8021H0V7.07548C0 3.37369 2.99936 0.373047 6.69955 0.373047H14.6454V3.90464H6.73468C4.96503 3.90464 3.53192 5.34021 3.53192 7.10878V11.8003L3.53007 11.8021Z"/><path d="M39.6616 4.9082C35.6858 4.9082 32.877 7.64801 32.877 11.3313V19.4045H36.4015V11.9159C36.4015 11.7512 36.4126 11.248 36.4348 11.0908C36.6511 9.50907 37.9307 8.33249 39.6616 8.33249C41.3924 8.33249 42.672 9.50907 42.8884 11.0908C42.9106 11.248 42.9217 11.7512 42.9217 11.9159V19.4045H46.4462V11.3313C46.4462 7.64986 43.6373 4.9082 39.6616 4.9082Z"/><path d="M55.6976 7.97641V4.90362H51.9733V0.373047H48.4414V15.5631C48.4414 17.685 50.1611 19.4055 52.2821 19.4055H55.6976V16.3272H53.51C52.6612 16.3272 51.9733 15.639 51.9733 14.7898V7.97641H55.6976Z"/><path d="M23.866 16.9217C22.0945 16.942 20.1455 15.8154 19.9329 13.6731H31.0723L31.0834 13.5751C31.3774 11.0036 30.7838 8.81883 29.0973 7.08171C27.7474 5.67758 25.8631 4.9043 23.7902 4.9043C19.6795 4.9043 16.4453 8.30639 16.4453 12.4892C16.4453 16.6719 19.7017 19.9982 23.842 19.9982C25.3324 19.9982 26.7396 19.5671 27.9083 18.755C29.0955 17.954 29.9535 16.7829 30.5859 15.3677H26.9671C26.2866 16.3852 25.2233 16.9198 23.8679 16.9198L23.866 16.9217ZM23.818 7.95859C23.8346 7.95859 23.8512 7.95859 23.8679 7.95859C26.1941 7.95859 27.483 9.66611 27.6698 10.9019H19.9883C20.1714 9.64021 21.4381 7.95859 23.818 7.95859Z"/></svg>`;
+const WM = document.querySelector(".logo .wm").outerHTML;
+const URLS = {"결제":"dashboard.sentbiz.com","고객 결제 화면":"pay.sentbiz.com","POS 모드":"dashboard.sentbiz.com/pos","환불 요청":"dashboard.sentbiz.com"};
+const NET = `<svg class="net" viewBox="0 0 420 300" aria-hidden="true"><defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3D7BFF"/><stop offset=".55" stop-color="#8B6CFF"/><stop offset="1" stop-color="#38D6F5"/></linearGradient><radialGradient id="nd"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#C3B2FF"/><stop offset="1" stop-color="#8B6CFF" stop-opacity="0"/></radialGradient></defs>
+<g stroke="url(#ng)" stroke-width="1.2" fill="none" opacity=".75"><path d="M40 210L130 120L230 170L320 70L390 140"/><path d="M130 120L180 40L320 70"/><path d="M230 170L260 260L390 140"/><path d="M40 210L110 270L260 260"/><path d="M180 40L230 170"/><path d="M110 270L130 120"/></g>
+<g fill="none" stroke="rgba(195,178,255,.55)" stroke-width="1"><rect x="196" y="186" width="68" height="68" rx="14" transform="rotate(12 230 220)"/><rect x="286" y="36" width="68" height="68" rx="14" transform="rotate(-10 320 70)"/></g>
+<g>${[[40,210],[130,120],[230,170],[320,70],[390,140],[180,40],[260,260],[110,270]].map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="${i%3?9:14}" fill="url(#nd)"/><circle cx="${x}" cy="${y}" r="${i%3?2.5:3.5}" fill="#fff"/>`).join("")}</g></svg>`;
+const byId = id => ALL.find(p => p.id === id);
+const numOf = id => { const i = PAGES.findIndex(p => p.id === id); return i < 0 ? "" : String(i + 1); };
+
+let motion = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+try { const v = localStorage.getItem("sbg-motion"); if (v !== null) motion = v === "1"; } catch(e) {}
+const mBtn = document.getElementById("motion");
+function setMotion(v){ motion = v; mBtn.setAttribute("aria-pressed", v ? "true" : "false"); try { localStorage.setItem("sbg-motion", v ? "1" : "0"); } catch(e) {} }
+setMotion(motion);
+mBtn.onclick = () => { setMotion(!motion); route(); };
+
+function buildNav(){
+  const toc = document.getElementById("toc"), pick = document.getElementById("pick");
+  const HOMEI = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>';
+  toc.innerHTML = `<div><a href="#start" class="gicon" data-g="start">${HOMEI}<span class="tip">가이드 개요</span></a><a href="#start" data-id="start" class="home">가이드 개요</a></div>` + GROUPS.map(g => {
+    const ps = PAGES.filter(p => p.group === g);
+    return `<div><a href="#${ps[0].id}" class="gicon" data-g="${esc(g)}">${(GICON[g]||"").replace(/width="18" height="18"/,'width="20" height="20"')}<span class="tip">${esc(g)}</span></a><div class="grp-t">${GICON[g]||""}${esc(g)}${ps.every(p => p.new) ? '<span class="flag new">NEW</span>' : ""}</div>${
+      ps.map(p => `<a href="#${p.id}" data-id="${p.id}">${esc(p.title)}</a>`).join("")}</div>`;
+  }).join("");
+  pick.innerHTML = `<option value="start">가이드 개요</option>` + GROUPS.map(g => `<optgroup label="${esc(g)}">${
+    PAGES.filter(p => p.group === g).map(p => `<option value="${p.id}">${esc(p.title)}</option>`).join("")}</optgroup>`).join("");
+  pick.addEventListener("change", e => { location.hash = e.target.value; });
+}
+
+function callout(t){
+  if (!t) return "";
+  if (t.startsWith("주의:")) return `<div class="callout danger"><i class="ic">!</i><div><b>꼭 확인해 주세요</b>${esc(t.slice(3))}</div></div>`;
+  return `<div class="callout"><i class="ic">i</i><div>${esc(t)}</div></div>`;
+}
+
+function renderStart(){
+  const c = OV.changes.map(([t, d]) => `<tr><td>${esc(t)}<span class="flag new">NEW</span></td><td>${esc(d)}</td></tr>`).join("");
+  const cards = GROUPS.map(g => {
+    const ps = PAGES.filter(p => p.group === g);
+    return `<div class="card"><div class="t"><span class="gi">${GICON[g]||""}</span>${esc(g)}${ps.every(p => p.new) ? '<span class="flag new">NEW</span>' : ""}</div><p>${esc(GDESC[g] || "")}</p><ol>${
+      ps.map(p => `<li><a href="#${p.id}">${esc(p.title)}</a></li>`).join("")}</ol></div>`;
+  }).join("");
+  return `<section class="hero">${WMW}<small>가맹점 대시보드 이용 가이드 · 2026년 11월</small><h1><span class="gt">스테이블코인 결제,</span><br>이렇게 시작하세요</h1><p>결제 QR을 만들고, 매장에서 POS 모드로 결제를 받고, 고객 환불을 요청하는 방법을 화면 순서대로 안내합니다.</p><div class="chips">${GROUPS.map(g => `<a href="#${PAGES.find(p => p.group === g).id}">${esc(g)}</a>`).join("")}</div></section>
+  <h3>이것부터 확인하세요</h3>
+  <ul class="quick">${QUICK.map(([id, t, d]) => `<li><a href="#${id}"><b>${esc(t)}</b><span>${esc(d)}</span></a></li>`).join("")}</ul>
+  <h3>메뉴별 안내</h3>
+  <div class="cards">${cards}</div>
+  <h3>새로 추가된 기능</h3>
+  <div class="tbl"><table><thead><tr><th>기능</th><th>내용</th></tr></thead><tbody>${c}</tbody></table></div>
+  ${callout("화면 속 번호는 아래 설명의 번호와 같습니다. 화면을 누르면 크게 볼 수 있습니다.")}`;
+}
+
+function renderPage(p){
+  const split = !!p.img; const narrow = p.img && (p.layout === "side" || (p.w / p.h) <= 1.3);
+  const useAnim = motion && p.anim;
+  let shot = "";
+  if (p.img){
+    const src = IMG[useAnim ? p.anim : p.img];
+    const mks = useAnim ? "" : p.markers.map(([n,x,y]) => `<span class="mk" data-n="${n}" style="left:${x}%;top:${y}%">${n}</span>`).join("");
+    const hint = p.anim ? (useAnim ? "화면을 누르면 크게 볼 수 있습니다 · 오른쪽 위에서 움직이는 화면을 끌 수 있습니다" : "화면을 누르면 크게 볼 수 있습니다") : "화면을 누르면 크게 볼 수 있습니다";
+    shot = `<div class="shot ${split ? "side" : ""}"><div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span>${URLS[p.group]||"sentbiz.com"}</span></div><div class="shot-inner"><img src="${src}" data-full="${p.full}" class="zoomable" alt="${esc(p.title)} 화면" width="${p.w}" height="${p.h}" decoding="async">${mks}</div><div class="zoom-hint">${hint}</div></div>`;
+  }
+  const dialogs = p.dialogs.length ? `<div class="dialogs ${p.dialogs.length > 3 ? "many" : ""}">${p.dialogs.map(d => `<figure class="shot"><div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span>${URLS[p.group]||"sentbiz.com"}</span></div><div class="shot-inner"><img src="${IMG[d.img]}" data-full="${d.img}" class="zoomable" alt="${esc(d.cap)}" decoding="async"></div><figcaption>${esc(d.cap)}</figcaption></figure>`).join("")}</div>` : "";
+  const items = `<h3>${p.img ? "화면 살펴보기" : "진행 순서"}</h3><ol class="items">${p.items.map(it => `<li data-n="${it.n}"><span class="num">${it.n}</span><span class="name">${esc(it.name)}${it.flag ? `<span class="flag ${it.flag === "NEW" ? "new" : ""}">${esc(it.flag)}</span>` : ""}</span><div class="desc"><p>${esc(it.desc)}</p>${it.bullets.length ? `<ul>${it.bullets.map(b => `<li>${esc(b)}</li>`).join("")}</ul>` : ""}</div></li>`).join("")}</ol>`;
+  const table = p.table ? `<h3>${esc(p.table.title || "환불 상태 한눈에 보기")}</h3><div class="tbl"><table><thead><tr>${p.table.head.map(h => `<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${p.table.rows.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>` : "";
+  const body = !p.img ? items + dialogs + callout(p.callout) : `<div class="split ${narrow ? "narrow" : "wide"}"><div class="split-text">${items}${callout(p.callout)}</div><div class="split-media ${p.dialogs.length ? "" : "stick"}">${shot}${dialogs}</div></div>`;
+  const sib = PAGES.filter(q => q.group === p.group && q.id !== p.id);
+  const related = sib.length ? `<div class="related"><h4>${esc(p.group)} 메뉴의 다른 글</h4><ul>${sib.map(q => `<li><a href="#${q.id}">${esc(q.title)}</a></li>`).join("")}</ul></div>` : "";
+  const gi = PAGES.filter(q => q.group === p.group); const si = gi.indexOf(p) + 1;
+  return `<header class="phead"><span class="step" aria-hidden="true">${String(si).padStart(2,"0")}</span><div class="crumb">${GICON[p.group]||""}${esc(p.group)} · ${si}/${gi.length}</div><h1>${esc(p.title)}${p.new ? '<span class="flag new">NEW</span>' : ""}</h1><p class="lead">${esc(p.lead)}</p></header>${body}${table}${related}`;
+}
+
+function show(id){
+  const idx = Math.max(0, ALL.findIndex(p => p.id === id));
+  const p = ALL[idx];
+  const el = document.getElementById("page");
+  const prev = ALL[idx - 1], next = ALL[idx + 1];
+  el.innerHTML = (p.id === "start" ? renderStart() : renderPage(p)) +
+    `<nav class="pager" aria-label="이전·다음 글">${prev ? `<a href="#${prev.id}"><small>이전</small><b>${esc(prev.title)}</b></a>` : ""}${next ? `<a class="next" href="#${next.id}"><small>다음</small><b>${esc(next.title)}</b></a>` : ""}</nav>`;
+  document.querySelectorAll("#toc a").forEach(a => { if (a.dataset.id === p.id) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+  document.getElementById("pick").value = p.id;
+  document.querySelectorAll("#toc .gicon").forEach(a => a.classList.toggle("on", a.dataset.g === (p.id === "start" ? "start" : p.group)));
+  el.querySelectorAll(".items > li[data-n]").forEach(li => {
+    const mk = el.querySelector(`.mk[data-n="${li.dataset.n}"]`);
+    if (!mk) return;
+    li.addEventListener("mouseenter", () => mk.classList.add("hot"));
+    li.addEventListener("mouseleave", () => mk.classList.remove("hot"));
+  });
+  el.querySelectorAll("img.zoomable").forEach(im => im.onclick = () => openZoom(IMG[im.dataset.full] || im.src));
+  const cur = document.querySelector('#toc a[aria-current="page"]'); if (cur) cur.scrollIntoView({block:"nearest"});
+  document.title = (p.id === "start" ? "" : p.title + " · ") + "SentBiz 결제·POS·환불 이용 가이드";
+}
+function openZoom(src){ const lb = document.getElementById("lb"); lb.querySelector("img").src = src; lb.hidden = false; lb.focus(); }
+document.getElementById("lb").addEventListener("click", e => { e.currentTarget.hidden = true; });
+
+/* search */
+const IDX = PAGES.map(p => ({p, text: [p.title, p.group, p.lead, p.callout || "", ...p.items.flatMap(i => [i.name, i.desc, ...i.bullets])].join(" ").toLowerCase()}));
+const q = document.getElementById("q"), res = document.getElementById("res");
+let sel = -1;
+function search(){
+  const v = q.value.trim().toLowerCase();
+  if (!v){ res.hidden = true; return; }
+  const terms = v.split(/\s+/);
+  const hits = IDX.filter(x => terms.every(t => x.text.includes(t))).slice(0, 8);
+  sel = -1;
+  res.innerHTML = hits.length ? hits.map(({p}) => `<a href="#${p.id}"><b>${esc(p.title)}</b><small>${esc(p.group)} · ${esc(p.lead.slice(0, 60))}${p.lead.length > 60 ? "…" : ""}</small></a>`).join("") : `<div class="none">검색 결과가 없습니다.</div>`;
+  res.hidden = false;
+}
+q.addEventListener("input", search);
+q.addEventListener("focus", search);
+q.addEventListener("keydown", e => {
+  const as = [...res.querySelectorAll("a")];
+  if (e.key === "ArrowDown" || e.key === "ArrowUp"){ e.preventDefault(); if (!as.length) return; sel = (sel + (e.key === "ArrowDown" ? 1 : -1) + as.length) % as.length; as.forEach((a, i) => a.classList.toggle("on", i === sel)); }
+  if (e.key === "Enter"){ const a = as[Math.max(sel, 0)]; if (a){ location.hash = a.getAttribute("href").slice(1); res.hidden = true; q.blur(); } }
+  if (e.key === "Escape"){ res.hidden = true; q.blur(); }
+});
+res.addEventListener("click", e => { if (e.target.closest("a")){ res.hidden = true; q.value = ""; } });
+document.addEventListener("click", e => { if (!e.target.closest(".search")) res.hidden = true; });
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") document.getElementById("lb").hidden = true;
+  if (e.target.closest("select,input,textarea")) return;
+  if (e.key === "/"){ e.preventDefault(); q.focus(); return; }
+  const idx = ALL.findIndex(p => p.id === ((location.hash || "#start").slice(1)));
+  if (e.key === "ArrowRight" && idx < ALL.length - 1) location.hash = ALL[idx + 1].id;
+  if (e.key === "ArrowLeft" && idx > 0) location.hash = ALL[idx - 1].id;
+});
+document.getElementById("footlogo").innerHTML = WM;
+const wrapEl = document.getElementById("wrap"), navBtn = document.getElementById("navbtn");
+function setCollapsed(v){ wrapEl.classList.toggle("collapsed", v); navBtn.setAttribute("aria-expanded", v ? "false" : "true"); navBtn.setAttribute("aria-label", v ? "메뉴 펼치기" : "메뉴 접기"); try { localStorage.setItem("sbg-nav", v ? "1" : "0"); } catch(e) {} }
+let col = false; try { col = localStorage.getItem("sbg-nav") === "1"; } catch(e) {}
+setCollapsed(col);
+navBtn.onclick = () => setCollapsed(!wrapEl.classList.contains("collapsed"));
+buildNav();
+let last = null;
+function route(){ const id = (location.hash || "#start").slice(1); const changed = id !== last; last = id; show(id); if (changed) window.scrollTo(0, 0); }
+window.addEventListener("hashchange", route);
+route();
+</script>
+</body>
+</html>
